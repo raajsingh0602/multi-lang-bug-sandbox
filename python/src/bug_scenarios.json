@@ -1,0 +1,58 @@
+[
+  {
+    "id": "py-bug-1",
+    "description": "Off-by-one in binary search",
+    "buggy_code": "def binary_search(arr, target):\n    lo, hi = 0, len(arr)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            lo = mid\n        else:\n            hi = mid\n    return -1",
+    "expected_fix": "def binary_search(arr, target):\n    lo, hi = 0, len(arr) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1",
+    "test_cases": [
+      {"id": "t1", "input": [[1, 2, 3, 4, 5], 3], "expected_output": 2},
+      {"id": "t2", "input": [[1, 2, 3, 4, 5], 1], "expected_output": 0},
+      {"id": "t3", "input": [[1, 2, 3, 4, 5], 5], "expected_output": 4},
+      {"id": "t4", "input": [[1, 2, 3, 4, 5], 6], "expected_output": -1},
+      {"id": "t5", "input": [[1], 1], "expected_output": 0}
+    ]
+  },
+  {
+    "id": "py-bug-2",
+    "description": "Type error in string concatenation",
+    "buggy_code": "def greet(name, age):\n    return \"Hello \" + name + \", you are \" + age + \" years old\"",
+    "expected_fix": "def greet(name, age):\n    return \"Hello \" + name + \", you are \" + str(age) + \" years old\"",
+    "test_cases": [
+      {"id": "t1", "input": ["Alice", 30], "expected_output": "Hello Alice, you are 30 years old"},
+      {"id": "t2", "input": ["Bob", 25], "expected_output": "Hello Bob, you are 25 years old"}
+    ]
+  },
+  {
+    "id": "py-bug-3",
+    "description": "Infinite loop in while condition",
+    "buggy_code": "def countdown(n):\n    result = []\n    while n > 0:\n        result.append(n)\n        n -= 1\n    return result",
+    "expected_fix": "def countdown(n):\n    result = []\n    while n > 0:\n        result.append(n)\n        n -= 1\n    return result",
+    "test_cases": [
+      {"id": "t1", "input": [5], "expected_output": [5, 4, 3, 2, 1]},
+      {"id": "t2", "input": [1], "expected_output": [1]},
+      {"id": "t3", "input": [0], "expected_output": []}
+    ]
+  },
+  {
+    "id": "py-bug-4",
+    "description": "Wrong operator in calculation",
+    "buggy_code": "def area_of_circle(radius):\n    return 3.14159 * radius + radius",
+    "expected_fix": "def area_of_circle(radius):\n    return 3.14159 * radius * radius",
+    "test_cases": [
+      {"id": "t1", "input": [1], "expected_output": 3.14159},
+      {"id": "t2", "input": [2], "expected_output": 12.56636},
+      {"id": "t3", "input": [0], "expected_output": 0.0}
+    ]
+  },
+  {
+    "id": "py-bug-5",
+    "description": "Missing base case in recursion",
+    "buggy_code": "def factorial(n):\n    return n * factorial(n - 1)",
+    "expected_fix": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)",
+    "test_cases": [
+      {"id": "t1", "input": [5], "expected_output": 120},
+      {"id": "t2", "input": [1], "expected_output": 1},
+      {"id": "t3", "input": [0], "expected_output": 1}
+    ]
+  }
+]

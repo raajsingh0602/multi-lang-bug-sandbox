@@ -1,0 +1,72 @@
+{
+  "python_bugs": [
+    {
+      "id": "py-bug-1",
+      "test_cases": [
+        {"id": "t1", "input": [[1, 2, 3, 4, 5], 3], "expected_output": 2},
+        {"id": "t2", "input": [[1, 2, 3, 4, 5], 1], "expected_output": 0},
+        {"id": "t3", "input": [[1, 2, 3, 4, 5], 5], "expected_output": 4},
+        {"id": "t4", "input": [[1, 2, 3, 4, 5], 6], "expected_output": -1}
+      ]
+    },
+    {
+      "id": "py-bug-2",
+      "test_cases": [
+        {"id": "t1", "input": ["Alice", 30], "expected_output": "Hello Alice, you are 30 years old"}
+      ]
+    },
+    {
+      "id": "py-bug-4",
+      "test_cases": [
+        {"id": "t1", "input": [1], "expected_output": 3.14159},
+        {"id": "t2", "input": [2], "expected_output": 12.56636}
+      ]
+    },
+    {
+      "id": "py-bug-5",
+      "test_cases": [
+        {"id": "t1", "input": [5], "expected_output": 120},
+        {"id": "t2", "input": [1], "expected_output": 1},
+        {"id": "t3", "input": [0], "expected_output": 1}
+      ]
+    }
+  ],
+  "java_bugs": [
+    {
+      "id": "java-bug-1",
+      "test_cases": [
+        {"id": "t1", "input": "[1,2,3,4,5],3", "expected_output": 2},
+        {"id": "t2", "input": "[1,2,3,4,5],1", "expected_output": 0}
+      ]
+    },
+    {
+      "id": "java-bug-2",
+      "test_cases": [
+        {"id": "t1", "input": "hello", "expected_output": "olleh"},
+        {"id": "t2", "input": "racecar", "expected_output": "racecar"}
+      ]
+    },
+    {
+      "id": "java-bug-4",
+      "test_cases": [
+        {"id": "t1", "input": "racecar", "expected_output": true},
+        {"id": "t2", "input": "hello", "expected_output": false}
+      ]
+    }
+  ],
+  "typescript_bugs": [
+    {
+      "id": "ts-bug-1",
+      "test_cases": [
+        {"id": "t1", "input": "[1,2,3,4,5]", "expected_output": "[1,2,3,4,5]"},
+        {"id": "t2", "input": "[[1,2],[3,4]]", "expected_output": "[1,2,3,4]"}
+      ]
+    },
+    {
+      "id": "ts-bug-2",
+      "test_cases": [
+        {"id": "t1", "input": "{a:1,b:2}", "expected_output": "{a:1,b:2}"}
+      ]
+    }
+  ]
+}
